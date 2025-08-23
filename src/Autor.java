@@ -6,9 +6,10 @@ public class Autor {
     private String nomeAutor;
     private LocalDate dataNascimento;
 
-    public Autor(long id, String nomeAutor) {
+    public Autor(long id, String nomeAutor, LocalDate dataNascimento) {
         this.id = id;
         this.nomeAutor = nomeAutor;
+        this.dataNascimento = dataNascimento;
     }
 
     public long getId() {
@@ -29,5 +30,14 @@ public class Autor {
 
     public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    @Override
+    public String toString() {
+        return "Autor{" +
+                "id=" + id +
+                ", nomeAutor='" + nomeAutor + '\'' +
+                ", dataNascimento=" + dataNascimento +
+                '}';
     }
 }
