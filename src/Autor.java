@@ -2,18 +2,18 @@ import java.time.LocalDate;
 
 public class Autor {
 
-    final long id;
+    final long autorId;
     private String nomeAutor;
     private LocalDate dataNascimento;
 
     public Autor(long id, String nomeAutor, LocalDate dataNascimento) {
-        this.id = id;
+        this.autorId = id;
         this.nomeAutor = nomeAutor;
         this.dataNascimento = dataNascimento;
     }
 
-    public long getId() {
-        return id;
+    public long getAutorId() {
+        return autorId;
     }
 
     public String getNomeAutor() {
@@ -35,7 +35,7 @@ public class Autor {
     @Override
     public String toString() {
         return "Autor{" +
-                "id=" + id +
+                "id=" + autorId +
                 ", nomeAutor='" + nomeAutor + '\'' +
                 ", dataNascimento=" + dataNascimento +
                 '}';

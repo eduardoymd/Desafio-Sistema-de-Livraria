@@ -2,7 +2,7 @@ import java.time.LocalDate;
 
 public class Livro {
 
-    final long id;
+    final long livroId;
     private String titulo;
     private Autor autor;
     private boolean disponivel;
@@ -10,7 +10,7 @@ public class Livro {
     private LocalDate dataAtualizacao;
 
     public Livro(long id, String titulo, Autor autor, boolean disponivel, LocalDate dataCadastro, LocalDate dataAtualizacao) {
-        this.id = id;
+        this.livroId = id;
         this.titulo = titulo;
         this.autor = autor;
         this.disponivel = disponivel;
@@ -18,8 +18,8 @@ public class Livro {
         this.dataAtualizacao = dataAtualizacao;
     }
 
-    public long getId() {
-        return id;
+    public long getLivroId() {
+        return livroId;
     }
 
     public String getTitulo() {
@@ -60,17 +60,5 @@ public class Livro {
 
     public void setDataAtualizacao(LocalDate dataAtualizacao) {
         this.dataAtualizacao = dataAtualizacao;
-    }
-
-    @Override
-    public String toString() {
-        return "Livro{" +
-                "id=" + id +
-                ", titulo='" + titulo + '\'' +
-                ", autor=" + autor +
-                ", disponivel=" + disponivel +
-                ", dataCadastro=" + dataCadastro +
-                ", dataAtualizacao=" + dataAtualizacao +
-                '}';
     }
 }

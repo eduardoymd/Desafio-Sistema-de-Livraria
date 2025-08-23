@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Biblioteca {
 
@@ -11,10 +12,26 @@ public class Biblioteca {
     }
     public void listarLivros(){
         for (int i = 0; i < livros.size(); i++) {
-            System.out.printf("ID: %s | Título: %s | %s\n",livros.get(i).getId(), livros.get(i).getTitulo(), livros.get(i).isDisponivel());
+            System.out.printf(
+                    "ID: %s | Título: %s | %s\n",
+                    livros.get(i).getLivroId(),
+                    livros.get(i).getTitulo(),
+                    livros.get(i).isDisponivel() ? "Disponível" : "Indisponível"
+            );
         }
     }
-    public void realizarEmprestimo(){
-
+    public void realizarEmprestimo(Scanner scanner){
+        listarLivros();
+        System.out.println("===========================================");
+        System.out.print("Digite a ID do Livro: ");
+        int id = scanner.nextInt();
+    }
+    public Livro buscarLivroPorID(int id){
+        for (Livro livro : livros) {
+            if (livro.getLivroId() == id) {
+                return livro;
+            }
+        }
+        return null;
     }
 }
