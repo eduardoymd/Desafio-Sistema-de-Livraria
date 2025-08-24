@@ -7,8 +7,6 @@ public class Crud {
     public void crud(Scanner scanner, Biblioteca biblioteca) {
         while(continuar){
             System.out.println("--------------------------");
-            System.out.println("BIBLIOTECA");
-            System.out.println("--------------------------");
             System.out.println("[1] Listar Livros");
             System.out.println("[2] Realizar Empréstimo");
             System.out.println("[3] Cadastrar Novo Livro");
@@ -16,13 +14,14 @@ public class Crud {
 
             System.out.print("Opção: ");
             int opcao = scanner.nextInt();
+            System.out.println("--------------------------");
             switch (opcao){
                 case 1:
                     System.out.println("LISTA DE LIVROS CADASTRADOS");
                     biblioteca.listarLivros();
                     break;
                 case 2:
-                    System.out.println("op2");
+                    biblioteca.realizarEmprestimo(scanner);
                     break;
                 case 3:
                     System.out.println("op3");

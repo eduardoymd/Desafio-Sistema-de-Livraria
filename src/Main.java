@@ -20,7 +20,7 @@ public class Main {
         biblioteca.adicionarNovoLivro(livro3);
 
         Autor autor4 = new Autor(4, "Machado de Assis", LocalDate.of(1839, 6, 21));
-        Livro livro4 = new Livro(4, "Dom Casmurro", autor4, true, LocalDate.of(1899, 1, 1), LocalDate.now());
+        Livro livro4 = new Livro(4, "Dom Casmurro", autor4, false, LocalDate.of(1899, 1, 1), LocalDate.now());
         biblioteca.adicionarNovoLivro(livro4);
 
         Autor autor5 = new Autor(5, "Cecília Meireles", LocalDate.of(1901, 11, 7));
@@ -28,7 +28,7 @@ public class Main {
         biblioteca.adicionarNovoLivro(livro5);
 
         Autor autor6 = new Autor(6, "Jorge Amado", LocalDate.of(1912, 8, 10));
-        Livro livro6 = new Livro(6, "Capitães da Areia", autor6, true, LocalDate.of(1937, 6, 1), LocalDate.now());
+        Livro livro6 = new Livro(6, "Capitães da Areia", autor6, false, LocalDate.of(1937, 6, 1), LocalDate.now());
         biblioteca.adicionarNovoLivro(livro6);
 
         crud.crud(scanner, biblioteca);

@@ -25,6 +25,17 @@ public class Biblioteca {
         System.out.println("===========================================");
         System.out.print("Digite a ID do Livro: ");
         int id = scanner.nextInt();
+        Livro livro = buscarLivroPorID(id);
+
+        if (livro != null){
+            if (livro.isDisponivel()){
+                System.out.println("Livro Disponivel");
+            } else {
+                System.out.println("Livro indisponível");
+            }
+        } else {
+            System.out.println("ID não encontrada");
+        }
     }
     public Livro buscarLivroPorID(int id){
         for (Livro livro : livros) {
