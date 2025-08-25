@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Biblioteca {
@@ -6,6 +7,7 @@ public class Biblioteca {
     ArrayList<Livro> livros = new ArrayList<>();
     ArrayList<Autor> autor = new ArrayList<>();
     ArrayList<Emprestimo> emprestimos = new ArrayList<>();
+    Tratamento tratamento = new Tratamento(new Scanner(System.in));
 
     public void adicionarNovoLivro(Livro livro){
         livros.add(livro);
@@ -22,14 +24,15 @@ public class Biblioteca {
     }
     public void realizarEmprestimo(Scanner scanner){
         listarLivros();
-        System.out.println("===========================================");
-        System.out.print("Digite a ID do Livro: ");
-        int id = scanner.nextInt();
+        System.out.println("-------------------------------------------");
+
+        int id = tratamento.lerInt("Digite a ID do livro:");
         Livro livro = buscarLivroPorID(id);
 
         if (livro != null){
             if (livro.isDisponivel()){
                 System.out.println("Livro Disponivel");
+                System.out.println("-------------------------------------------");
                 livro.setDisponivel(false);
                 listarLivros();
 
@@ -51,9 +54,5 @@ public class Biblioteca {
     public void cadastrarLivro(Livro livro, Scanner scanner){
         System.out.print("Nome do Livro: ");
         scanner.next();
-    }
-
-    public int lerIntSeguro(Scanner scanner, String mensagem){
-        
     }
 }

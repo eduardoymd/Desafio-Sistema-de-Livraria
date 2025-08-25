@@ -1,20 +1,18 @@
 import java.util.Scanner;
 
 public class Crud {
-
+    Tratamento tratamento = new Tratamento(new Scanner(System.in));
     boolean continuar = true;
 
     public void crud(Scanner scanner, Biblioteca biblioteca) {
         while(continuar){
-            System.out.println("--------------------------");
-            System.out.println("[1] Listar Livros");
-            System.out.println("[2] Realizar Empréstimo");
-            System.out.println("[3] Cadastrar Novo Livro");
-            System.out.println("--------------------------");
-
-            System.out.print("Opção: ");
-            int opcao = scanner.nextInt();
-            System.out.println("--------------------------");
+            int opcao = tratamento.lerInt(
+                    "--------------------------\n" +
+                    "[1] Listar Livros\n" +
+                    "[2] Realizar Empréstimo\n" +
+                    "[3] Cadastrar Novo Livro\n" +
+                    "--------------------------\n" +
+                    "Opção: ");
             switch (opcao){
                 case 1:
                     System.out.println("LISTA DE LIVROS CADASTRADOS");
