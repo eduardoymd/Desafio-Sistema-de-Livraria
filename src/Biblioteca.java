@@ -30,6 +30,9 @@ public class Biblioteca {
         if (livro != null){
             if (livro.isDisponivel()){
                 System.out.println("Livro Disponivel");
+                livro.setDisponivel(false);
+                listarLivros();
+
             } else {
                 System.out.println("Livro indisponível");
             }
@@ -44,5 +47,13 @@ public class Biblioteca {
             }
         }
         return null;
+    }
+    public void cadastrarLivro(Livro livro, Scanner scanner){
+        System.out.print("Nome do Livro: ");
+        scanner.next();
+    }
+
+    public int lerIntSeguro(Scanner scanner, String mensagem){
+        
     }
 }
