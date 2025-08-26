@@ -24,17 +24,15 @@ public class Biblioteca {
     }
     public void realizarEmprestimo(Scanner scanner){
         listarLivros();
-        System.out.println("-------------------------------------------");
+        System.out.println("-----------------------------------------------------------------");
 
-        int id = tratamento.lerInt("Digite a ID do livro:");
+        int id = tratamento.lerInt("Digite a ID do livro: ");
         Livro livro = buscarLivroPorID(id);
 
         if (livro != null){
             if (livro.isDisponivel()){
                 System.out.println("Livro Disponivel");
-                System.out.println("-------------------------------------------");
                 livro.setDisponivel(false);
-                listarLivros();
 
             } else {
                 System.out.println("Livro indisponível");

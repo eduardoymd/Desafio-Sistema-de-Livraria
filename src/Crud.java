@@ -7,22 +7,23 @@ public class Crud {
     public void crud(Scanner scanner, Biblioteca biblioteca) {
         while(continuar){
             int opcao = tratamento.lerInt(
-                    "--------------------------\n" +
+                    "-----------------------------------------------------------------\n" +
                     "[1] Listar Livros\n" +
                     "[2] Realizar Empréstimo\n" +
                     "[3] Cadastrar Novo Livro\n" +
-                    "--------------------------\n" +
+                    "-----------------------------------------------------------------\n" +
                     "Opção: ");
             switch (opcao){
                 case 1:
-                    System.out.println("LISTA DE LIVROS CADASTRADOS");
+                    System.out.println("\nLISTA DE LIVROS CADASTRADOS");
                     biblioteca.listarLivros();
                     break;
                 case 2:
+                    System.out.println("\nEPRÉSTIMO DE LIVRO");
                     biblioteca.realizarEmprestimo(scanner);
                     break;
                 case 3:
-                    System.out.println("op3");
+                    System.out.println("\nCADASTRAR NOVO LIVRO");
                     break;
                 default:
                     System.out.println("Opção inválida");
